@@ -1,0 +1,98 @@
+.sale-wrapper {
+	$box-shadow-sale: 0 5px 20px #0000001a;
+	position: fixed;
+	top: 110px;
+	right: 30px;
+	padding: 1rem;
+	background-color: $white;
+	width: 100%;
+	max-width: 360px;
+	border-radius: 3px;
+	z-index: 10;
+	box-shadow: $box-shadow-sale;
+	&::before {
+		z-index: 1;
+		content: '';
+		box-shadow: 0 5px 20px #0000001a;
+		border-bottom: 8px solid white;
+		border-left: 12px solid transparent;
+		border-right: 12px solid transparent;
+		position: absolute;
+		top: 5px;
+		margin-top: -12px;
+		margin-left: -18px;
+		right: 160px;
+		$box-shadow-sale: 0 5px 20px #0000001a;
+		@include breakpoint-down(desktop) {
+			right: 101px;
+		}
+		@include breakpoint-down(smalldesktop) {
+			right: 27px;
+		}
+	}
+	@include hidden;
+	&._show {
+		@include visible;
+		transition: 0.2s opacity ease-in;
+	}
+}
+
+.sale-top {
+	.title-box {
+		@include flex-center-ver;
+		justify-content: space-between;
+		padding-bottom: 1rem;
+		> .title {
+			@include flex-center-ver;
+			gap: 8px;
+			color: $black;
+			font-size: $fz-sm;
+			line-height: $leading-sm;
+			font-weight: $fw-bold;
+			font-family: $heading-font;
+		}
+		> .icon {
+			width: 24px;
+			height: 24px;
+		}
+	}
+}
+
+.sale-product-list {
+	@include flex-column;
+	gap: 12px;
+	overflow-y: auto;
+	height: 530px;
+}
+
+.product-sale-item {
+	display: flex;
+	align-items: flex-start;
+	gap: 16px;
+
+	> .image {
+		width: 80px;
+		cursor: pointer;
+	}
+	.desc {
+		width: calc(100% - 80px);
+		font-size: $fz-sm;
+		line-height: $leading-sm;
+		color: $black;
+		@include flex-column;
+		gap: 4px;
+		cursor: pointer;
+		> .name {
+			color: $black;
+		}
+		> .size {
+			color: $brown-color;
+		}
+		> .price {
+			color: $error-color;
+			> del {
+				color: $brown-color;
+			}
+		}
+	}
+}

@@ -1,0 +1,93 @@
+.order-information {
+	@include flex-column;
+	gap: 12px;
+	padding: 20px;
+	border: 1px solid $brown-light-color;
+	width: max-content;
+	@include breakpoint-down(smalldesktop) {
+		width: 100%;
+	}
+	> h4 {
+		font-size: $fz-base;
+		text-transform: uppercase;
+		line-height: $leading-sm;
+		color: $black;
+		font-weight: $fw-bold;
+		margin-bottom: 8px;
+		font-family: $heading-font;
+		@include breakpoint-down(smalldesktop) {
+			font-size: $fz-sm;
+		}
+	}
+	> p {
+		font-weight: $fw-bold;
+		> span {
+			font-weight: $fw-normal;
+		}
+	}
+	.btn {
+		width: max-content;
+		background-color: $error-color;
+		text-align: center;
+		&:hover {
+			background: rgba($color: $error-color, $alpha: 0.8);
+		}
+	}
+}
+
+.order-list-items {
+	@include flex-column;
+	gap: 20px;
+	margin-top: 50px;
+	> h4 {
+		font-size: $fz-base;
+		text-transform: uppercase;
+		line-height: $leading-sm;
+		color: $black;
+		font-weight: $fw-bold;
+		margin-bottom: 20px;
+		font-family: $heading-font;
+		@include breakpoint-down(smalldesktop) {
+			font-size: $fz-sm;
+		}
+	}
+}
+// item order
+.order-item {
+	@include flex-center;
+	gap: 20px;
+	> .image {
+		cursor: pointer;
+	}
+	> .desc {
+		@include flex-column;
+		font-size: $fz-base;
+		line-height: $leading-sm;
+		color: $black;
+		width: 100%;
+		display: block;
+		@include breakpoint-down(phone) {
+			font-size: $fz-sm;
+		}
+		> a {
+			font-weight: $fw-bold;
+			color: $black;
+			margin-bottom: 6px;
+			width: 320px;
+			@include truncate-multiline-new(2);
+			@include breakpoint-down(phone) {
+				width: 80%;
+			}
+		}
+		> p {
+			margin-block: 10px;
+		}
+		> div {
+			@include flex-center-ver;
+			gap: 6px;
+			color: $brow-light-75-color;
+			margin-top: 12px;
+			cursor: pointer;
+		}
+	}
+}

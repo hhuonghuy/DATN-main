@@ -1,0 +1,163 @@
+.site-header {
+	background: $white;
+	display: block;
+	position: sticky;
+	top: 0;
+	z-index: 100;
+	@include breakpoint-down(smalldesktop) {
+		display: none;
+	}
+}
+
+.search-site {
+	@include flex-center-ver;
+	justify-content: space-between;
+	gap: 32px;
+
+	> .field {
+		@include flex-center-ver;
+		gap: 16px;
+		padding: 6px 0;
+		border-bottom: 1px solid $brown-light-color;
+	}
+
+	> .icons {
+		@include flex-center-ver;
+		gap: 32px;
+		> #shopping-bag-anchor {
+			z-index: 10000 !important;
+		}
+	}
+}
+
+.top-menu-wrapper {
+	border-bottom: 1px solid $brown-light-color;
+
+	.top-menu {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		height: $top-menu-height;
+
+		> .slides {
+			@include flex-center;
+			width: 100%;
+			max-width: 430px;
+		}
+
+		> .actions {
+			@include flex-center-ver;
+			justify-content: right;
+			font-size: $fz-xs;
+			color: $brown-color;
+		}
+
+		> .actions > .action {
+			font-size: $fz-xs;
+			color: $brown-color;
+			text-transform: capitalize;
+			cursor: pointer;
+			position: relative;
+			padding-inline: 30px;
+			height: 100%;
+			@include flex-center;
+			&.-location {
+				@include flex-center-ver;
+				gap: 4px;
+			}
+		}
+
+		> .actions > .action > .dropdown {
+			$box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+			@include flex-column;
+			position: absolute;
+			top: 102%;
+			left: 2px;
+			gap: 12px;
+			background: $white;
+			box-shadow: $box-shadow;
+			padding: 20px;
+			z-index: 1000;
+			width: 150px;
+			display: none;
+			> * {
+				color: $primary-color;
+				&:hover {
+					font-weight: $fw-bold;
+					text-decoration: underline;
+				}
+			}
+		}
+		> .actions > .action:hover > .dropdown {
+			display: flex;
+		}
+	}
+}
+
+.top-menu-slide {
+	@include flex-center;
+	font-size: $fz-xs;
+	line-height: $leading-sm;
+	width: 100%;
+	color: $primary-color;
+	> p {
+		text-transform: capitalize;
+		font-weight: $fw-bold;
+		margin-left: 4px;
+		text-decoration: underline;
+	}
+}
+
+.main-menu {
+	@include flex-center-ver;
+	justify-content: space-between;
+	font-family: $heading-font;
+	height: $main-menu-height;
+
+	> .nav > .wrapper {
+		@include flex-center-ver;
+		gap: 32px;
+	}
+}
+
+.main-menu-list {
+	@include flex-center-ver;
+	gap: 32px;
+
+	> .item > .link {
+		position: relative;
+		font-size: $fz-sm;
+		font-weight: 400;
+		line-height: $leading-md;
+		color: $primary-color;
+		text-transform: uppercase;
+		&::before {
+			@include size(0, 1.5px);
+			content: '';
+			position: absolute;
+			background: $primary-color;
+			bottom: -5px;
+			transition: width 0.4s linear;
+		}
+
+		&:hover::before {
+			width: 100%;
+		}
+	}
+}
+
+.inner-cart-number {
+	position: relative;
+	& > p {
+		@include flex-center;
+		position: absolute;
+		right: -6px;
+		top: -6px;
+		width: 18px;
+		height: 18px;
+		border-radius: 50%;
+		background: $error-color;
+		color: #fff;
+		font-size: 10px;
+		font-family: $heading-font;
+	}
+}

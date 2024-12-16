@@ -1,0 +1,226 @@
+.products-wrapper {
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-start;
+	gap: 16px;
+	margin-top: 16px;
+	@include breakpoint-down(smalldesktop) {
+		display: block;
+	}
+}
+
+.site-categories {
+	> .content {
+		@include flex-center;
+		gap: 4px;
+		color: $black;
+
+		> .sub-content {
+			font-size: $fz-xs;
+			color: $brow-light-75-color;
+		}
+		> .content-title {
+			font-size: $fz-sm;
+			font-weight: 500;
+			text-decoration: underline;
+		}
+	}
+	> .title {
+		margin-top: 12px;
+		padding-bottom: 56px;
+		font-family: $heading-font;
+		font-size: $fz-2xl;
+		line-height: $leading-lg;
+		font-weight: 800;
+		@include breakpoint-down(smalldesktop) {
+			padding-bottom: 28px;
+			margin-top: 6px;
+			font-size: $fz-xl;
+		}
+		@include breakpoint-down(phone) {
+			padding-bottom: 16px;
+			font-size: $fz-lg;
+		}
+	}
+}
+
+.category-item {
+	@include flex-column;
+	gap: 12px;
+	margin-bottom: 30px;
+	cursor: pointer;
+	@include breakpoint-down(smalldesktop) {
+		gap: 6px;
+		margin-bottom: 20px;
+	}
+	> .image {
+		height: 330px;
+		@include breakpoint-down(smalldesktop) {
+			height: 200px;
+		}
+	}
+	> .category-link {
+		-top: 20px;
+		color: $black;
+		font-size: $fz-base;
+		line-height: $leading-md;
+		font-weight: $fw-bold;
+		@include breakpoint-down(smalldesktop) {
+			font-size: $fz-sm;
+			line-height: $leading-sm;
+		}
+	}
+}
+
+.link-color {
+	color: $black;
+	font-size: $fz-sm;
+	line-height: $leading-md;
+	font-weight: $fw-bold;
+}
+
+.sidebar-inner > .search-wrapper {
+	@include flex-center;
+	justify-content: space-between;
+	> input {
+		padding-block: 8px;
+	}
+	> svg {
+		color: $brow-light-75-color;
+	}
+}
+
+//  Products list
+
+.wrapper-product-list {
+	@include flex-column;
+}
+.main-section-products {
+	position: relative;
+}
+
+.filter-wrapper {
+	margin-top: 32px;
+	height: $top-filter-height;
+	background: $white;
+	z-index: 100;
+	@include flex-center-ver;
+	justify-content: space-between;
+	> .total-products {
+		font-size: $fz-xs;
+		line-height: $leading-sm;
+		color: rgb(110, 110, 110);
+	}
+}
+
+.filters-inner {
+	@include flex-center-ver;
+	gap: 32px;
+	font-size: $fz-xs;
+	line-height: $leading-sm;
+	@include breakpoint-down(smalldesktop) {
+		gap: 16px;
+	}
+	> .filter {
+		@include flex-center-ver;
+		gap: 8px;
+		color: $black;
+
+		font-weight: $fw-bold;
+		padding-right: 4px;
+	}
+	> .filter > .filter-select-products {
+		font-weight: $fw-normal;
+		padding: 8px;
+	}
+}
+
+.main-products-list {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	padding-bottom: 30px;
+	gap: 50px 48px;
+	@include breakpoint-down(smalldesktop) {
+		gap: 25px 32px;
+	}
+	@include breakpoint-down(phone) {
+		grid-template-columns: repeat(2, 1fr);
+		gap: 16px;
+	}
+	> .product {
+		cursor: pointer;
+		> .image {
+			position: relative;
+			@include flex-center;
+			margin-bottom: 8px;
+
+			> .btn {
+				@include flex-center;
+				@include hidden;
+				position: absolute;
+				bottom: 30px;
+				width: 85%;
+				margin-left: auto;
+				margin-right: auto;
+				background: $secondary-color;
+				color: $white;
+				padding: 14px 16px;
+				font-size: $fz-base;
+				font-weight: $fw-bold;
+				transition: 0.3s ease-in-out;
+				&:hover {
+					background: $dark;
+				}
+			}
+		}
+		&:hover > .image > .btn {
+			@include visible;
+		}
+		> .desc {
+			> .name {
+				text-transform: capitalize !important;
+			}
+			> .brand {
+				text-transform: capitalize !important;
+			}
+		}
+	}
+}
+
+.pagination-wrapper {
+	@include flex-center-ver;
+	justify-content: space-between;
+	padding-block: 30px;
+	border-top: 2px solid $brown-light-color;
+	> .pagination-list {
+		@include flex-center;
+		gap: 12px;
+		flex-wrap: wrap;
+		> .item {
+			@include flex-center;
+			color: $black;
+			width: 40px;
+			height: 40px;
+			font-size: $fz-xs;
+			line-height: $leading-sm;
+			&:hover {
+				border: 1px solid $brown-light-color;
+			}
+			&.-active {
+				border: 1px solid $black;
+			}
+		}
+	}
+	> .button {
+		@include flex-center-ver;
+		gap: 8px;
+		font-size: $fz-sm;
+		line-height: $leading-sm;
+		> .label {
+			display: block;
+			@include breakpoint-down(smalldesktop) {
+				display: none;
+			}
+		}
+	}
+}

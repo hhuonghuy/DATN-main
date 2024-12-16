@@ -1,0 +1,75 @@
+.site-products {
+	margin-bottom: 32px;
+	@include breakpoint-down(phone) {
+		margin-bottom: 16px;
+	}
+	> .title {
+		padding-inline: 20px;
+		margin-block: 50px;
+		font-size: $fz-2xl;
+		color: $dark;
+		font-family: $heading-font;
+		font-weight: $fw-bold;
+		letter-spacing: 3.2px;
+		@include breakpoint-down(phone) {
+			font-size: $fz-lg;
+			margin-block: 24px;
+			letter-spacing: 0;
+		}
+	}
+	> .product-list {
+		> .item > .desc {
+			color: $dark;
+			> .name {
+				text-transform: capitalize;
+				font-size: $fz-base;
+				line-height: $leading-sm;
+				margin-bottom: 12px;
+				@include breakpoint-down(phone) {
+					font-size: $fz-sm;
+					margin-block: 3px;
+				}
+			}
+			> .new-price {
+				font-size: $fz-sm;
+				line-height: $leading-sm;
+				font-weight: $fw-bold;
+			}
+		}
+	}
+}
+
+.product {
+	> .desc {
+		color: $dark;
+		@include flex-column;
+
+		> .name {
+			color: $dark;
+			text-transform: capitalize;
+			font-size: $fz-sm;
+			line-height: $leading-sm;
+			margin-bottom: 3px;
+			@include breakpoint-down(phone) {
+				font-size: $fz-sm;
+			}
+		}
+		> .new-price {
+			font-size: $fz-sm;
+			line-height: $leading-sm;
+			font-weight: $fw-bold;
+		}
+		> .sale {
+			font-size: $fz-xs;
+			line-height: $leading-sm;
+			color: $error-color;
+			font-weight: $fw-bold;
+		}
+		> .brand {
+			font-size: $fz-xs;
+			line-height: $leading-sm;
+			color: $brown-color;
+			font-weight: $fw-bold;
+		}
+	}
+}

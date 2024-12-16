@@ -1,0 +1,211 @@
+.order {
+	margin-block: 80px;
+	@include breakpoint-down(phone) {
+		margin-block: 30px;
+	}
+	> .wrapper {
+		display: flex;
+		align-items: flex-start;
+		justify-content: center;
+		@include breakpoint-down(smalldesktop) {
+			flex-direction: column;
+		}
+		gap: 68px;
+	}
+}
+
+.order-information-inner {
+	width: 60%;
+	@include breakpoint-down(smalldesktop) {
+		width: 100%;
+	}
+	> .title {
+		font-family: $heading-font;
+		color: $black;
+		font-size: $fz-base;
+		line-height: $leading-md;
+		font-weight: $fw-bold;
+	}
+}
+
+.order-payment-wrapper {
+	width: 40%;
+	@include breakpoint-down(smalldesktop) {
+		width: 100%;
+	}
+	> .title {
+		font-family: $heading-font;
+		color: $black;
+		font-size: $fz-base;
+		line-height: $leading-md;
+		font-weight: $fw-bold;
+	}
+	> .item {
+		@include flex-center-ver;
+		justify-content: space-between;
+		margin-top: $fz-base;
+		margin-bottom: 40px;
+		font-size: $fz-base;
+		line-height: $leading-md;
+		color: #6e6e6e;
+		@include breakpoint-down(phone) {
+			font-size: $fz-sm;
+			line-height: $leading-sm;
+		}
+
+		> p:last-child {
+			color: $black;
+		}
+	}
+	> .total {
+		@include flex-center-ver;
+		justify-content: space-between;
+		padding: 32px 0px;
+		border-bottom: 1.5px solid $black;
+		border-top: 1.5px solid $black;
+		color: $black;
+		font-size: 20px;
+		line-height: 28px;
+		font-weight: $fw-bold;
+		margin-bottom: 40px;
+	}
+}
+
+.order-form-wrapper {
+	> .button {
+		margin-top: 30px;
+		cursor: pointer;
+		color: $black;
+		font-size: $fz-base;
+		line-height: $leading-md;
+		font-weight: $fw-bold;
+		background-color: $secondary-color;
+		border-radius: 2px;
+		color: $white;
+		width: 100%;
+		height: 50px;
+		transition: background-color 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+		&:hover {
+			background-color: $dark;
+		}
+		@include breakpoint-down(smalldesktop) {
+			max-width: 100%;
+		}
+	}
+}
+
+.order-form-box {
+	margin-top: $leading-md;
+	padding: 32px 44px;
+	border: 1px solid #c9c9c9;
+	@include breakpoint-down(phone) {
+		margin-block: 30px;
+		font-size: $fz-sm;
+		padding: 24px 32px;
+	}
+	> .item {
+		@include flex-column;
+		gap: 4px;
+		margin-bottom: 20px;
+		@include breakpoint-down(phone) {
+			font-size: $fz-sm;
+			line-height: $leading-sm;
+		}
+
+		label {
+			font-weight: $fw-bold;
+		}
+
+		input {
+			padding-block: 8px;
+			border-bottom: 1px solid $brown-light-color;
+		}
+	}
+	> .items-title {
+		font-size: $fz-base;
+		font-weight: $fw-bold;
+		margin-bottom: 30px;
+	}
+	> .form-input {
+		@include flex-column;
+		margin-bottom: 20px;
+
+		> label {
+			font-weight: $fw-bold;
+		}
+		> select {
+			padding-block: 8px;
+			border-top: none;
+			border-left: none;
+			border-right: none;
+			border-bottom: 1px solid $brown-light-color;
+		}
+	}
+}
+
+.order-list-cart-wrapper {
+	> .title {
+		color: $black;
+		font-size: $fz-base;
+		line-height: $leading-md;
+		font-weight: $fw-bold;
+	}
+	> .number {
+		font-size: $fz-sm;
+		line-height: $leading-sm;
+		color: #6e6e6e;
+		padding-top: 4px;
+		margin-bottom: 24px;
+	}
+}
+
+.list-item-order-box {
+	@include flex-column;
+	gap: 20px;
+	> .item {
+		display: flex;
+		align-items: flex-start;
+		gap: 32px;
+		> .image {
+			width: 120px;
+			height: 120px;
+		}
+		> .desc {
+			font-size: $fz-base;
+			line-height: $leading-sm;
+			color: $black;
+			width: 100%;
+			display: block;
+			@include breakpoint-down(phone) {
+				font-size: $fz-sm;
+			}
+			> * {
+				margin-bottom: 6px;
+			}
+			> .name {
+				width: 320px;
+				@include truncate-multiline-new(2);
+				@include breakpoint-down(phone) {
+					width: 80%;
+				}
+			}
+			> .price {
+				font-weight: $fw-bold;
+			}
+			> .size {
+				@include flex-center-ver;
+				gap: 20px;
+			}
+			> .total {
+				@include flex-center-ver;
+				gap: 20px;
+				> p {
+					color: $black;
+					font-size: $fz-base;
+					line-height: $leading-sm;
+					font-weight: $fw-bold;
+				}
+			}
+		}
+	}
+}

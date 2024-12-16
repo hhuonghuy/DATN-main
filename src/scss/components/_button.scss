@@ -1,0 +1,29 @@
+.site-button {
+	@mixin generate-button-color($color, $text-color: $white) {
+		background: $color;
+		color: $text-color;
+
+		&:hover {
+			background: rgba($color, 0.8);
+		}
+	}
+	@include flex-center;
+	@include transition;
+	padding: 12px 16px;
+	line-height: $leading-button;
+	font-size: 16px;
+	cursor: pointer;
+	font-weight: $fw-bold;
+	@include breakpoint-down(smalldesktop) {
+		@include flex-center;
+		width: 100%;
+	}
+
+	&.-primary {
+		@include generate-button-color($primary-color);
+	}
+
+	&.-secondary {
+		@include generate-button-color($secondary-color);
+	}
+}

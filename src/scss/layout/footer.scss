@@ -1,0 +1,149 @@
+.site-footer {
+	margin-top: 72px;
+	background: $brown-white;
+	padding-block: 60px;
+	@include breakpoint-down(smalldesktop) {
+		padding-block: 30px;
+	}
+}
+
+.footer-wrapper {
+	> .contact {
+		@include flex-center-ver;
+		justify-content: space-around;
+		padding-inline: 72px;
+		font-size: $fz-sm;
+		padding-bottom: 32px;
+		@include breakpoint-down(smalldesktop) {
+			gap: 24px;
+			flex-wrap: wrap;
+			padding-bottom: 16px;
+			padding-inline: 0;
+		}
+
+		> .sale-box {
+			display: flex;
+			align-items: flex-start;
+			width: 100%;
+			gap: 24px;
+			@include breakpoint-down(phone) {
+				@include flex-column;
+				gap: 12px;
+			}
+			> .sale {
+				font-family: $heading-font;
+				font-size: $fz-lg;
+				font-weight: 800;
+				line-height: $leading-md;
+				width: 14vw;
+				@include breakpoint-down(smalldesktop) {
+					width: 100%;
+				}
+			}
+			> .content {
+				font-size: $fz-sm;
+				line-height: $leading-sm;
+				width: 14vw;
+
+				@include breakpoint-down(smalldesktop) {
+					width: 100%;
+				}
+			}
+		}
+
+		> .field-box {
+			display: flex;
+			align-items: flex-start;
+			gap: 24px;
+
+			@include breakpoint-down(smalldesktop) {
+				@include flex-column;
+				width: 100%;
+				gap: 12px;
+			}
+			> .field {
+				@include flex-column;
+				@include breakpoint-down(smalldesktop) {
+					width: 100%;
+				}
+				> .input {
+					width: 300px;
+					padding-block: 8px;
+					border-bottom: 1px solid $black;
+					@include breakpoint-down(smalldesktop) {
+						width: 100%;
+					}
+				}
+			}
+			> .button {
+				@include flex-center;
+				width: 200px;
+				@include breakpoint-down(smalldesktop) {
+					width: 100%;
+				}
+			}
+		}
+	}
+}
+
+.footer-wrapper {
+	> .menu-list {
+		width: 100%;
+		display: grid;
+		grid-template-columns: repeat(5, 1fr);
+		border-top: 1px solid $black;
+		padding-block: 48px;
+		@include breakpoint-down(smalldesktop) {
+			grid-template-columns: 1fr;
+		}
+
+		> .item {
+			@include flex-column;
+			gap: 16px;
+			font-size: $fz-sm;
+			line-height: $fz-sm;
+			@include breakpoint-down(smalldesktop) {
+				gap: 0;
+				border-bottom: 1px solid $brown-light-color;
+			}
+			> .title {
+				font-weight: $fw-bold;
+				color: $black;
+				padding-bottom: 8px;
+				@include breakpoint-down(smalldesktop) {
+					@include flex-center-ver;
+					width: 100%;
+					justify-content: space-between;
+					padding-block: 24px;
+				}
+
+				> .icon {
+					display: none;
+					@include breakpoint-down(smalldesktop) {
+						display: block;
+					}
+				}
+			}
+			> .link {
+				color: $brown-color;
+				@include breakpoint-down(smalldesktop) {
+					@include flex-column;
+					@include hidden;
+					gap: 16px;
+					height: 0;
+				}
+				&.-show {
+					@include visible;
+					height: auto;
+				}
+				> a {
+					color: $brown-color;
+					padding-bottom: 12px;
+					&:hover {
+						color: $black;
+					}
+				}
+			}
+		}
+	}
+}

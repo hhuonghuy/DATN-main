@@ -1,0 +1,253 @@
+.home-banner-section {
+	background: $success-color;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	color: $white;
+	padding-block: 32px;
+
+	> .subtitle {
+		font-size: $fz-sm;
+		font-weight: $fw-bold;
+		line-height: $leading-sm;
+		margin-bottom: 24px;
+	}
+
+	> .title {
+		font-size: 40px;
+		font-weight: 800;
+		line-height: 40px;
+		letter-spacing: 1.4px;
+		padding-bottom: 16px;
+		@include breakpoint-down(smalldesktop) {
+			font-size: $fz-lg;
+			line-height: $leading-lg;
+		}
+	}
+
+	> .description {
+		font-size: $fz-base;
+		line-height: $leading-md;
+		width: 100%;
+		max-width: 530px;
+		margin-left: auto;
+		margin-right: auto;
+		padding-bottom: 24px;
+		@include breakpoint-down(smalldesktop) {
+			font-size: $fz-sm;
+		}
+	}
+
+	> .links {
+		@include flex-center;
+		gap: 32px;
+		padding-bottom: 16px;
+		@include breakpoint-down(smalldesktop) {
+			@include flex-center-column;
+		}
+	}
+
+	> .links > * {
+		position: relative;
+		color: $white;
+		&::before {
+			@include transition;
+			position: absolute;
+			content: '';
+			width: 100%;
+			height: 2px;
+			bottom: -8px;
+			border-radius: 4px;
+			background: $white;
+		}
+		&:hover::before {
+			bottom: -6px;
+		}
+	}
+	> .footer {
+		padding-top: 12px;
+		fill: #fff;
+	}
+}
+
+.section-content {
+	margin-block: 24px;
+
+	> .title {
+		font-size: $fz-base;
+		margin-block: 24px;
+	}
+	> .links {
+		@include flex-center;
+		gap: 24px;
+		@include breakpoint-down(smalldesktop) {
+			@include flex-column;
+			gap: 6px;
+		}
+		> .site-button {
+			color: $white;
+			background-color: $black;
+			&:hover {
+				background: rgba($color: $black, $alpha: 0.8);
+			}
+		}
+	}
+}
+
+.bg-light-orange {
+	background: #c6a85d;
+}
+
+.site-discover {
+	@include flex-column;
+	gap: 32px;
+	margin-top: 32px;
+	margin-bottom: 64px;
+	@include breakpoint-down(smalldesktop) {
+		margin-top: 16px;
+		margin-bottom: 32px;
+	}
+}
+.discover-wrapper {
+	&:nth-child(odd) {
+		@include flex-center-ver;
+		flex-direction: row;
+		@include breakpoint-down(phone) {
+			@include flex-column;
+			text-align: center;
+		}
+	}
+	&:nth-child(even) {
+		@include flex-center-ver;
+		flex-direction: row-reverse;
+		@include breakpoint-down(phone) {
+			@include flex-column;
+			text-align: center;
+		}
+	}
+
+	> .video > video {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+	> .desc {
+		width: 100%;
+		padding: 0 12vw 0 10vw;
+		> .title {
+			font-size: $heading-font;
+			font-size: $fz-2xl;
+			line-height: $leading-lg;
+			font-weight: 800;
+			letter-spacing: 0.6px;
+			@include breakpoint-down(smalldesktop) {
+				font-size: $fz-lg;
+				line-height: $leading-md;
+				margin-block: 24px;
+			}
+		}
+		> .content {
+			font-size: $fz-base;
+			line-height: $leading-md;
+			color: $black;
+			width: 100%;
+			max-width: 430px;
+			margin-block: 32px;
+			@include breakpoint-down(smalldesktop) {
+				margin-block: 16px;
+			}
+		}
+		> .links {
+			@include flex-center-ver;
+			gap: 32px;
+			padding-bottom: 16px;
+			@include breakpoint-down(smalldesktop) {
+				flex-wrap: wrap;
+			}
+			@include breakpoint-down(phone) {
+				justify-content: center;
+			}
+		}
+		> .links > * {
+			position: relative;
+			color: $black;
+			font-weight: 600;
+			&::before {
+				@include transition;
+				position: absolute;
+				content: '';
+				width: 100%;
+				height: 2px;
+				bottom: -8px;
+				border-radius: 4px;
+				background: $error-color;
+			}
+			&:hover::before {
+				bottom: -6px;
+			}
+		}
+	}
+}
+
+.site-carousel {
+	background: $light-color;
+	padding-block: 64px;
+	margin-block: 12px;
+	@include breakpoint-down(smalldesktop) {
+		margin-block: 6px;
+		padding-block: 32px;
+	}
+	> .title {
+		font-family: $heading-font;
+		font-size: $fz-2xl;
+		line-height: $leading-lg;
+		color: $black;
+		margin-bottom: 16px;
+		font-weight: 800;
+		@include breakpoint-down(smalldesktop) {
+			font-size: $fz-xl;
+		}
+		@include breakpoint-down(phone) {
+			margin-bottom: 8px;
+			font-size: $fz-lg;
+		}
+	}
+	> .carousel-list {
+		padding-block: 32px;
+		display: grid;
+		gap: 48px;
+		grid-template-columns: repeat(4, 1fr);
+		@include breakpoint-down(smalldesktop) {
+			grid-template-columns: repeat(3, 1fr);
+			padding-block: 16px;
+			gap: 12px;
+		}
+		@include breakpoint-down(phone) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+		> .item {
+			@include flex-column;
+			gap: 16px;
+			@include breakpoint-down(smalldesktop) {
+				gap: 8px;
+			}
+			> .image {
+				overflow: hidden;
+				aspect-ratio: auto;
+				&:hover > .item {
+					transition: transform 0.4s linear;
+					transform: scale(1.02);
+				}
+			}
+
+			> .desc {
+				color: $black;
+				font-size: $fz-sm;
+				line-height: $leading-sm;
+			}
+			> .desc p {
+				font-weight: $fw-bold;
+			}
+		}
+	}
+}

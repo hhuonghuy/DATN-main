@@ -1,0 +1,332 @@
+.main-page-cart {
+	padding-block: 64px;
+	@include breakpoint-down(phone) {
+		padding-block: 32px;
+	}
+}
+
+.page-cart-wrapper {
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+	gap: 60px;
+	@include breakpoint-down(phone) {
+		@include flex-column;
+		gap: 30px;
+	}
+}
+
+.bag-cart-box {
+	position: relative;
+}
+
+.shopping-cart-notify {
+	$brown-color-300: #f3f3f3;
+	@include flex-center-ver;
+	gap: 8px;
+	font-size: $fz-xs;
+	font-weight: $fw-bold;
+	line-height: $leading-sm;
+	padding: 16px 18px;
+	background: $brown-color-300;
+	color: $info-color;
+	margin-bottom: 50px;
+	@include breakpoint-down(smalldesktop) {
+		@include flex-column;
+		align-items: flex-start;
+	}
+	> .title {
+		> .sub {
+			font-weight: $fw-normal;
+		}
+	}
+	> .actions {
+		@include flex-center-ver;
+		gap: 6px;
+		font-weight: $fw-normal;
+		> .action {
+			font-weight: $fw-bold;
+			text-decoration: underline;
+			color: $info-color;
+		}
+	}
+}
+
+.shopping-cart-title-box {
+	@include flex-center-ver;
+	justify-content: space-between;
+	font-family: $heading-font;
+	color: $black;
+	font-size: $fz-base;
+	line-height: $leading-sm;
+	letter-spacing: 0.02em;
+	font-weight: $fw-bold;
+	margin-bottom: 30px;
+	> .qty {
+		font-size: $fz-sm;
+		font-family: $normal-font;
+		color: $brown-color;
+		font-weight: $fw-normal;
+	}
+}
+
+.shopping-cart-lists {
+	@include flex-column;
+	gap: 40px;
+	> .title {
+		font-size: $fz-base;
+		line-height: $leading-md;
+		font-weight: $fw-bold;
+	}
+}
+
+.shopping-cart-item {
+	display: flex;
+	align-items: flex-start;
+	gap: 60px;
+	padding-bottom: 40px;
+	@include breakpoint-down(phone) {
+		gap: 20px;
+	}
+
+	> .image {
+		max-width: 230px;
+		min-width: 70px;
+		max-height: 306px;
+		@include breakpoint-down(phone) {
+			max-width: 120px;
+			min-width: 70px;
+			max-height: 200px;
+		}
+	}
+}
+
+.shopping-cart-desc {
+	@include flex-column;
+	gap: 130px;
+	width: 100%;
+	@include breakpoint-down(smallphone) {
+		@include flex-column;
+		align-items: flex-start;
+		gap: 40px;
+	}
+	@include breakpoint-down(phone) {
+		gap: 20px;
+	}
+	.item-infor {
+		position: relative;
+		font-size: $fz-base;
+		line-height: $leading-lg;
+		color: $black;
+		@include breakpoint-down(phone) {
+			font-size: $fz-sm;
+			line-height: $leading-md;
+		}
+
+		> .brand {
+			font-size: $fz-sm;
+			line-height: $leading-sm;
+			color: $brown-color;
+		}
+		> .name-inner {
+			width: 400px;
+			@include breakpoint-down(phone) {
+				width: 100%;
+			}
+			cursor: pointer;
+			.name {
+				color: $black;
+				margin-bottom: 4px;
+				@include breakpoint-down(phone) {
+					font-size: $fz-sm;
+				}
+			}
+		}
+		> .color {
+			margin-bottom: 8px;
+			color: $brown-color;
+		}
+		> .infor {
+			@include flex-center-ver;
+			gap: 32px;
+			margin-top: 4px;
+			> .qty {
+				@include flex-center-ver;
+				gap: 8px;
+				z-index: 11;
+			}
+		}
+	}
+	> .item-total {
+		@include flex-center-ver;
+		justify-content: space-between;
+		@include breakpoint-down(phone) {
+			display: flex;
+			align-items: flex-start;
+			flex-direction: column-reverse;
+			gap: 8px;
+		}
+
+		> .actions {
+			@include flex-center-ver;
+			gap: 48px;
+
+			> * {
+				@include flex-center-ver;
+				gap: 4px;
+				font-size: $fz-xs;
+				line-height: $leading-sm;
+				text-decoration: underline;
+				color: $brown-color;
+			}
+			> .remove {
+				display: flex;
+				@include breakpoint-down(smalldesktop) {
+					display: none;
+				}
+			}
+		}
+		> .total > .price {
+			font-weight: $fw-bold;
+		}
+	}
+}
+
+.payment-cart-inner {
+	> .title {
+		color: $black;
+		font-family: $heading-font;
+		font-size: $fz-base;
+		line-height: $leading-sm;
+		letter-spacing: 0.02em;
+		margin-bottom: 32px;
+		font-weight: $fw-bold;
+
+		@include breakpoint-down(smalldesktop) {
+			margin-bottom: 24px;
+		}
+	}
+	> .promo-box {
+		font-size: $fz-base;
+		line-height: $leading-md;
+		font-weight: $fw-bold;
+		padding-block: 16px;
+
+		@include flex-center-ver;
+		justify-content: space-between;
+		@include breakpoint-down(phone) {
+			font-size: $fz-sm;
+		}
+		> .content {
+			font-size: $fz-sm;
+			font-weight: $fw-normal;
+			color: $secondary-color;
+			text-decoration: underline;
+			cursor: pointer;
+		}
+	}
+	> .promo-phase {
+		@include flex-center-ver;
+		font-size: $fz-base;
+		line-height: $leading-md;
+		padding-block: 16px;
+		color: $brown-color;
+		justify-content: space-between;
+		@include breakpoint-down(phone) {
+			font-size: $fz-sm;
+		}
+		> .content {
+			color: $secondary-color;
+		}
+	}
+	> .total-box {
+		@include flex-center-ver;
+		padding-top: 10px;
+		border-top: 1px solid $brown-light-color;
+		font-size: $fz-base;
+		line-height: $leading-md;
+		padding-block: 16px;
+		color: $brown-color;
+		justify-content: space-between;
+		@include breakpoint-down(phone) {
+			font-size: $fz-sm;
+		}
+		> .content {
+			font-weight: $fw-bold;
+			color: $secondary-color;
+		}
+	}
+	.button-checkout {
+		position: sticky;
+		top: 0;
+		height: 50px;
+		color: $white;
+		font-weight: $fw-bold;
+		background: $secondary-color;
+		@include flex-center;
+		width: 100%;
+		@include transition(450ms);
+		&:hover {
+			background: $dark;
+		}
+	}
+}
+
+.cart-favorite {
+	margin-bottom: 50px;
+	> .title {
+		font-family: $heading-font;
+		color: $black;
+		font-size: $fz-base;
+		line-height: $leading-sm;
+		letter-spacing: 0.02em;
+		font-weight: $fw-bold;
+		margin-top: 80px;
+		margin-bottom: 32px;
+		@include breakpoint-down(phone) {
+			margin-top: 40px;
+			margin-bottom: 16px;
+			font-size: $fz-sm;
+		}
+	}
+	> .actions {
+		letter-spacing: 0.02em;
+		color: $black;
+	}
+	> .actions > .link {
+		margin-top: 12px;
+		@include flex-center-ver;
+		gap: 24px;
+		> * {
+			font-size: $fz-sm;
+			line-height: $leading-sm;
+			font-weight: $fw-bold;
+			text-decoration: underline;
+		}
+	}
+}
+
+.dropdown-inner {
+	position: absolute;
+	top: 100%;
+	padding: 64px 24px 24px;
+	left: 21px;
+	transform: translateY(-20%);
+	border: 1px solid #403e3f;
+	z-index: -100;
+	background-color: #fff;
+	text-align: left;
+	cursor: default;
+	width: 100%;
+	max-width: 120px;
+	background: $white;
+	z-index: 10;
+	> .item {
+		font-size: $fz-xs;
+		line-height: $leading-sm;
+		margin-bottom: 12px;
+		cursor: pointer;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}

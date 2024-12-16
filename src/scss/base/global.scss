@@ -1,0 +1,27 @@
+.container {
+	width: 100%;
+	max-width: 1400px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-inline: 20px;
+}
+
+img {
+	height: 100%;
+	object-fit: cover;
+}
+a {
+	text-decoration: none;
+}
+li {
+	list-style: none;
+}
+
+input {
+	outline: none;
+	border: none;
+}
+
+svg {
+	cursor: pointer;
+}

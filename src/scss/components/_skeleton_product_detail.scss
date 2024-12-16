@@ -1,0 +1,40 @@
+/* Skeleton CSS for Swiper thumbnails */
+.detail-slide.skeleton-loading {
+	background-color: #f2f2f2; /* Màu nền */
+}
+
+/* Skeleton CSS for product information */
+.detail-info.skeleton-loading {
+	background-color: #f2f2f2; /* Màu nền */
+}
+
+/* Skeleton CSS for section products */
+.section-products.skeleton-loading {
+	background-color: #f2f2f2; /* Màu nền */
+}
+
+/* Skeleton CSS for comments */
+.comment.skeleton-loading {
+	background-color: #f2f2f2; /* Màu nền */
+}
+
+/* Skeleton loading animation */
+@keyframes skeleton-loading {
+	0% {
+		opacity: 0.5; /* Độ mờ ban đầu */
+	}
+	50% {
+		opacity: 0.75; /* Độ mờ trung bình */
+	}
+	100% {
+		opacity: 0.5; /* Độ mờ cuối cùng */
+	}
+}
+
+/* Áp dụng hiệu ứng skeleton loading */
+.detail-slide.skeleton-loading,
+.detail-info.skeleton-loading,
+.section-products.skeleton-loading,
+.comment.skeleton-loading {
+	animation: skeleton-loading 1.5s infinite ease-in-out; /* Thời gian và kiểu hiển thị */
+}

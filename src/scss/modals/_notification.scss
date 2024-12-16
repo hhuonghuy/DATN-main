@@ -1,0 +1,37 @@
+.modal-notification {
+	position: fixed;
+	top: 100px;
+	right: 80px;
+	padding: 16px;
+	width: 100%;
+	max-width: 250px;
+	z-index: 9999;
+	display: flex;
+	transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+	justify-content: center;
+	align-items: center;
+	border: 1px solid $brow-light-75-color;
+	background: $white;
+	opacity: 0;
+	visibility: hidden;
+	@include breakpoint-down(desktop) {
+		top: 100px;
+		right: 20px;
+	}
+	&.-open-notification {
+		opacity: 1;
+		visibility: visible;
+	}
+	&.-close-notification {
+		opacity: 0;
+		visibility: hidden;
+	}
+}
+
+.modal-content {
+	> button {
+		position: absolute;
+		top: 2px;
+		right: 5px;
+	}
+}

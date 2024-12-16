@@ -1,0 +1,117 @@
+.site {
+	&-profile {
+		display: flex;
+		gap: 200px;
+		margin-top: 60px;
+		@include breakpoint-down(smalldesktop) {
+			@include flex-column;
+			margin-top: 30px;
+			gap: 40px;
+		}
+	}
+}
+
+.account {
+	&-navigation {
+		width: 200px;
+		@include flex-column;
+		gap: 8px;
+		@include breakpoint-down(smalldesktop) {
+			@include flex-center;
+			width: 100%;
+			flex-direction: row;
+			gap: 20px;
+		}
+
+		> .nav-list-item > .link {
+			color: $primary-color;
+			font-size: $fz-sm;
+			&:hover {
+				text-decoration: underline;
+				font-weight: $fw-bold;
+			}
+		}
+	}
+}
+.nav {
+	&-list-item {
+	}
+}
+.form {
+	&-profile-wrapper {
+		width: 60%;
+		> h4 {
+			font-size: $fz-lg;
+			font-weight: $fw-bold;
+			margin-bottom: 30px;
+		}
+		> button {
+			margin-top: 50px;
+		}
+		@include breakpoint-down(smalldesktop) {
+			width: 100%;
+		}
+	}
+	&-box-account {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 20px;
+		@include breakpoint-down(phone) {
+			grid-template-columns: repeat(1, 1fr);
+		}
+	}
+	&-field {
+		@include flex-column;
+		margin-right: 40px;
+		gap: 20px;
+		@include breakpoint-down(smalldesktop) {
+			margin-right: 0;
+		}
+		> label {
+			font-size: $fz-xs;
+			line-height: $leading-sm;
+			color: $brown-color;
+		}
+
+		> div {
+			@include flex-center-ver;
+			> input {
+				width: 100%;
+				color: $black;
+				font-size: $fz-sm;
+				padding-block: 8px;
+				border-bottom: 0.5px solid $brown-light-color;
+			}
+			> button {
+				font-size: 10px;
+				cursor: pointer;
+			}
+		}
+		> input {
+			color: $black;
+			font-size: $fz-sm;
+			padding-block: 8px;
+			border-bottom: 0.5px solid $brown-light-color;
+		}
+		> select {
+			padding-block: 8px;
+			border-top: none;
+			border-left: none;
+			border-right: none;
+			border-bottom: 0.5px solid $brown-light-color;
+		}
+	}
+	&-box-address {
+		margin-top: 20px;
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 20px;
+		@include breakpoint-down(phone) {
+			grid-template-columns: repeat(1, 1fr);
+		}
+	}
+}
+.error {
+	&-message {
+	}
+}

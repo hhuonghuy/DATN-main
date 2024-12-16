@@ -1,0 +1,10 @@
+.swiper-button-prev::after,
+.swiper-button-next::after {
+	color: $primary-color !important;
+	font-size: $fz-sm !important;
+	font-weight: 900;
+}
+
+.swiper-list {
+	padding-inline: 30px !important;
+}

@@ -1,0 +1,98 @@
+// Typography
+._text-center {
+	text-align: center;
+}
+
+._text-uppercase {
+	text-transform: uppercase;
+}
+
+._text-lowercase {
+	text-transform: lowercase;
+}
+
+._text-capitalize {
+	text-transform: capitalize;
+}
+
+._text-transform-unset {
+	text-transform: unset;
+}
+
+._color-success-light {
+	color: $success-light-color;
+}
+._text-underline {
+	text-decoration: underline;
+}
+
+// font size
+._fz {
+	@each $size, $value in $font-size {
+		&-#{$size} {
+			font-size: $value;
+		}
+	}
+}
+
+// overlay
+._overlay {
+	position: fixed;
+	inset: 0;
+	background: rgba($color: $black, $alpha: 0.4);
+	z-index: 500;
+}
+
+// border
+
+._border-bottom {
+	border-bottom: 1px solid $brown-light-color;
+}
+._border-top {
+	border-top: 1px solid $brown-light-color;
+}
+
+._sticky {
+	position: sticky;
+	top: 0;
+}
+
+.error-message {
+	font-family: $heading-font;
+	font-size: $fz-xs;
+	line-height: $leading-sm;
+	font-weight: $fw-normal;
+	color: $error-color;
+}
+
+.error-message-sever {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 60px 0px;
+	font-family: $heading-font;
+	font-size: 64px;
+	line-height: $leading-sm;
+	font-weight: $fw-normal;
+	color: $error-color;
+}
+
+._custom-scrollbar {
+	&::-webkit-scrollbar {
+		width: 7px;
+	}
+
+	&::-webkit-scrollbar-track {
+		background-color: transparent;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background: #d9d9d9;
+		border-radius: 5px;
+	}
+}
+
+// margin
+.mt-15 {
+	margin-top: 60px;
+}

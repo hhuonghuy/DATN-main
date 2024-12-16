@@ -1,0 +1,67 @@
+.loading-skeleton-category {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 32px;
+	@include breakpoint-down(smalldesktop) {
+		grid-template-columns: repeat(3, 1fr);
+	}
+	@include breakpoint-down(phone) {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+.loading-skeleton-product {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 24px;
+	width: 1073px;
+	@include breakpoint-down(desktop) {
+		width: 100%;
+	}
+	@include breakpoint-down(tablet) {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+.loading-skeleton-card {
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	gap: 24px;
+	@include breakpoint-down(smalldesktop) {
+		grid-template-columns: repeat(3, 1fr);
+	}
+	@include breakpoint-down(phone) {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+.card-is-loading {
+	width: 100%;
+	.image,
+	h2,
+	p {
+		background: #f8f6f6;
+		background: linear-gradient(110deg, #ececec 4%, #f5f5f5 18%, #ececec 33%);
+		border-radius: 4px;
+		background-size: 200% 100%;
+		animation: 1.5s shine linear infinite;
+	}
+
+	.image {
+		height: 300px;
+		@include breakpoint-down(smalldesktop) {
+			height: 200px;
+		}
+	}
+
+	h2 {
+		margin-top: 8px;
+		height: 20px;
+	}
+}
+
+@keyframes shine {
+	to {
+		background-position-x: -200%;
+	}
+}

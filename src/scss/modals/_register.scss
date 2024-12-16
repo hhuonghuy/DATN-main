@@ -1,0 +1,130 @@
+.register-wrapper {
+	@include hidden;
+	&.-show {
+		@include visible;
+	}
+}
+
+.register-inner {
+	@include abs-center;
+	@include flex-center;
+	width: 100%;
+	max-width: 60vw;
+	background: $white;
+	padding-top: 120px;
+	padding-bottom: 56px;
+	position: relative;
+	height: 670px;
+	overflow: auto;
+	@include breakpoint-down(tablet) {
+		padding-top: 180px;
+		flex-direction: column;
+		height: 100vh;
+		max-width: 100%;
+	}
+	@include breakpoint-down(phone) {
+		padding-top: 300px;
+	}
+	> .icon {
+		position: absolute;
+		top: 20px;
+		right: 20px;
+		font-size: 32px;
+	}
+	> .desc {
+		width: 50%;
+		padding: 0 8vw;
+		@include breakpoint-down(tablet) {
+			width: 100%;
+			margin-bottom: 12px;
+		}
+
+		> .title {
+			@include flex-column;
+			font-family: $heading-font;
+			font-size: $fz-lg;
+			font-weight: 900;
+			color: $black;
+			> * {
+				color: $error-color;
+			}
+		}
+		> .content {
+			color: $black;
+			font-size: 20px;
+			line-height: 28px;
+			margin-top: 16px;
+			padding: 0 4px;
+			font-weight: $fw-bold;
+			max-width: 240px;
+			margin-left: auto;
+			margin-right: auto;
+			@include breakpoint-down(tablet) {
+				max-width: 100%;
+			}
+		}
+		> .description {
+			color: $black;
+			font-size: $fz-sm;
+			line-height: $leading-sm;
+			padding: 0 4px;
+			margin-top: 16px;
+			margin-left: auto;
+			margin-right: auto;
+			max-width: 200px;
+			@include breakpoint-down(tablet) {
+				max-width: 100%;
+			}
+		}
+	}
+}
+
+.form-register-inner {
+	@include flex-column;
+	gap: 32px;
+	width: 40%;
+	@include breakpoint-down(tablet) {
+		width: 90%;
+	}
+
+	> .item {
+		@include flex-column;
+		> label {
+			font-size: $fz-xs;
+			line-height: $leading-sm;
+			color: $brown-color;
+		}
+		> input {
+			color: $black;
+			font-size: $fz-sm;
+			padding-block: 8px;
+			border-bottom: 0.5px solid $black;
+		}
+	}
+	> .alert {
+		font-size: $fz-xs;
+		line-height: $leading-sm;
+		color: $brown-color;
+		text-align: left;
+		font-weight: 500;
+	}
+	> .notice {
+		color: $black;
+		font-size: 11px;
+		line-height: 15px;
+		> * {
+			font-weight: $fw-bold;
+			text-decoration: underline;
+		}
+	}
+	> .btn-submit {
+		text-align: center;
+	}
+}
+
+.btn-open-modal {
+	color: $black;
+	font-size: $fz-xs;
+	text-decoration-line: underline;
+	font-weight: $fw-bold;
+}

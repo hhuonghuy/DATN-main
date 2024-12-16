@@ -1,0 +1,124 @@
+.login-wrapper {
+	@include hidden;
+	&.-show {
+		@include visible;
+	}
+}
+
+.login-inner {
+	@include abs-center;
+	@include flex-center-column;
+	width: 100%;
+	max-width: 590px;
+	background: $white;
+	padding-top: 180px;
+	padding-bottom: 56px;
+	position: relative;
+	height: 632px;
+	overflow: auto;
+	@include breakpoint-down(tablet) {
+		flex-direction: column;
+		height: 100vh;
+		max-width: 100%;
+	}
+
+	> .icon {
+		position: absolute;
+		top: 20px;
+		right: 20px;
+		font-size: 32px;
+	}
+
+	> .desc {
+		> .title {
+			@include flex-column;
+			font-family: $heading-font;
+			font-size: $fz-lg;
+			font-weight: 900;
+			color: $black;
+			> * {
+				color: $error-color;
+			}
+		}
+		> .content {
+			color: $black;
+			font-size: 20px;
+			line-height: $leading-md;
+			margin-top: 16px;
+			padding: 0 4px;
+			font-weight: $fw-bold;
+		}
+		> .description {
+			color: $black;
+			font-size: $fz-sm;
+			line-height: $leading-sm;
+			padding: 0 4px;
+			margin-top: 16px;
+		}
+	}
+	> .separator {
+		width: 100%;
+		> .text {
+			@include flex-center;
+			margin-block: 24px;
+			color: $black;
+			font-family: $heading-font;
+			font-size: $fz-base;
+			line-height: $leading-sm;
+			letter-spacing: 0.02em;
+			font-weight: $fw-bold;
+		}
+	}
+	> .notice {
+		text-align: center;
+		color: $black;
+		font-size: 11px;
+		line-height: 15px;
+		margin-top: 24px;
+		width: 60%;
+		@include breakpoint-down(tablet) {
+			width: 90%;
+		}
+		> * {
+			font-weight: $fw-bold;
+			text-decoration: underline;
+		}
+	}
+	> .btn-login-google {
+		width: 60%;
+		background-color: transparent;
+		border: 2px solid $black;
+		color: $black;
+		&:hover {
+			color: $white;
+		}
+		@include breakpoint-down(tablet) {
+			width: 90%;
+		}
+	}
+}
+
+.form-login-inner {
+	@include flex-column;
+	gap: 32px;
+	width: 60%;
+	margin-top: 60px;
+	@include breakpoint-down(tablet) {
+		width: 90%;
+	}
+	> .item {
+		@include flex-column;
+		> label {
+			color: $black;
+			font-size: $fz-xs;
+			line-height: $leading-sm;
+			color: $brown-color;
+		}
+		> input {
+			color: $black;
+			font-size: $fz-sm;
+			padding-block: 8px;
+			border-bottom: 0.5px solid $black;
+		}
+	}
+}

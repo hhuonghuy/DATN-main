@@ -1,0 +1,15 @@
+.empty {
+	> p {
+		margin-bottom: 30px;
+	}
+	> div {
+		@include flex-center-ver;
+		gap: 12px;
+		> a {
+			@include flex-center;
+			font-weight: $fw-bold;
+			width: 150px;
+			font-size: $fz-sm;
+		}
+	}
+}

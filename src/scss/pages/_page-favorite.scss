@@ -1,0 +1,177 @@
+.favorite-account {
+	padding-top: 90px;
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	@include breakpoint-down(phone) {
+		@include flex-column;
+		padding-left: 4vw;
+		padding-top: 36px;
+	}
+	> .account-navigation {
+		@include flex-column;
+		gap: 12px;
+		width: 30%;
+		@include breakpoint-down(phone) {
+			width: 100%;
+			flex-direction: row;
+			gap: 30px;
+			overflow-x: scroll;
+			scroll-snap-type: x mandatory;
+			white-space: nowrap;
+		}
+		> .nav-list-item {
+			width: 200px;
+			> .link {
+				font-size: $fz-xs;
+				color: $dark;
+			}
+
+			@include breakpoint-down(phone) {
+				font-size: $fz-sm;
+			}
+			&:hover {
+				font-weight: $fw-bold;
+				text-decoration: underline;
+			}
+		}
+	}
+
+	> .favorites-list-wrapper {
+		width: 76%;
+		@include breakpoint-down(phone) {
+			width: 100%;
+		}
+		> .favorite-title {
+			@include flex-center-ver;
+			justify-content: space-between;
+			@include breakpoint-down(phone) {
+				margin-top: 30px;
+			}
+			> .text {
+				font-family: $heading-font;
+				font-size: $fz-base;
+				font-weight: $fw-bold;
+				@include breakpoint-down(phone) {
+					font-size: $fz-xs;
+				}
+			}
+			> .value {
+				font-size: $fz-sm;
+				color: $brown-color;
+			}
+		}
+
+		> .favorite-product-list {
+			width: 100%;
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			grid-gap: 40px 4%;
+			margin-top: 50px;
+			@include breakpoint-down(phone) {
+				grid-template-columns: repeat(1, 1fr);
+			}
+
+			> .favorite-item {
+				@include flex-column;
+				@include breakpoint-down(phone) {
+					flex-direction: row;
+					gap: 20px;
+					padding-bottom: 30px;
+					border-bottom: 1px solid $brown-light-color;
+				}
+				> .product-image {
+					padding-bottom: 12px;
+					position: relative;
+
+					> .slide-ratio {
+						width: 100%;
+						position: relative;
+						@include breakpoint-down(phone) {
+							width: 90px;
+							height: 120px;
+						}
+
+						> .cell-image-link {
+							object-fit: cover;
+							> .responsive-picture {
+								width: 100%;
+								height: 100%;
+								display: block;
+							}
+						}
+						> .favorite-button {
+							@include position(absolute, 10px, 10px, null, null);
+							@include flex-center;
+							width: 30px;
+							height: 30px;
+							border-radius: 50%;
+							background: $white;
+							@include breakpoint-down(phone) {
+								display: none;
+							}
+						}
+					}
+				}
+
+				> .product-info {
+					letter-spacing: 0.5px;
+					@include breakpoint-down(phone) {
+						width: 100%;
+					}
+
+					> .merchant-badge {
+						color: $black;
+						font-size: $fz-xs;
+					}
+
+					> .item-name {
+						display: flex;
+						align-items: flex-start;
+						justify-content: space-between;
+						margin-top: 6px;
+						font-size: $fz-xs;
+						font-weight: $fw-bold;
+						color: $primary-color;
+						cursor: pointer;
+						> .icon {
+							font-size: 24px;
+							display: none;
+
+							@include breakpoint-down(phone) {
+								display: block;
+							}
+						}
+						@include breakpoint-down(phone) {
+							margin-top: 2px;
+							font-size: $fz-sm;
+						}
+					}
+
+					> .item-color {
+						margin-top: 6px;
+						font-size: $fz-sm;
+						color: $brown-color;
+					}
+
+					> .item-size {
+						margin-top: 6px;
+						font-size: $fz-sm;
+						margin-bottom: 12px;
+					}
+
+					> .item-price {
+						margin: 8px 0;
+						font-size: $fz-sm;
+						font-weight: 600;
+					}
+
+					> .promo-badge {
+						font-size: $fz-xs;
+						color: $brown-color;
+					}
+				}
+			}
+		}
+	}
+}
